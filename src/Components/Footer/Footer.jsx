@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div>
             <div className='bg-[#78bf4d] text-white text-4xl'>
-                <div className='w-3/4 mx-auto font-semibold p-5 flex justify-between'>
+                <div className='w-4/6 mx-auto font-semibold p-5 flex justify-between'>
                     <h1>For 10% off use a promo code</h1>
                     <div className='flex gap-2 right-0'>
                         <input className='text-black' type="text" />

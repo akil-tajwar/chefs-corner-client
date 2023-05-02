@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
+    
+    }
     return (
         <div className='mx-auto w-fit border-slate-200 border p-8 mt-52 mb-20'>
             <h2 className='text-4xl text-center font-semibold mb-3'>Login</h2>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className='pb-2'>
                     <label htmlFor="email">Email</label><br />
                     <input className='bg-[#f5f5f5] p-2 border-slate-300 border w-72' type="email" name="email" id="" required />

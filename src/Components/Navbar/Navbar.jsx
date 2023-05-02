@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
+    const {user,} = useContext(AuthContext);
     return (
         <div className='bg-[#20252b] text-white p-5 fixed w-full top-0'>
             <div className='flex justify-between w-11/12 mx-auto'>
@@ -14,6 +16,7 @@ const Navbar = () => {
                     <Link className='hover:text-[#78bf4d] font-semibold' to='/blog'>Blog</Link>
                     <Link className='hover:text-[#78bf4d] font-semibold' to='/signup'>Signup</Link>
                     <Link className='hover:text-[#78bf4d] font-semibold' to='/login'>Login</Link>
+                    {user && <span>Welcome{user.displayName}</span>}
                 </div>
             </div>
         </div>
