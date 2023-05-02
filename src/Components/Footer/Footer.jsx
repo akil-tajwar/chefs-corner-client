@@ -21,7 +21,7 @@ const Footer = () => {
                     <div>
                         <div className='flex items-center mb-14'>
                             <img className='w-24' src="/src/assets/logo.png" alt="" />
-                            <h2 className='font-semibold text-4xl'>Chef's Corner <span className='text-[#78bf4d]'>.</span></h2>
+                            <h2 className='font-semibold text-4xl'>Chef&apos;s Corner <span className='text-[#78bf4d]'>.</span></h2>
                         </div>
                         <div>
                             {/* <p>Our chefs are very experienced and skillful. <br /> They can prepare any dish, that your heart <br /> truly desires.</p> */}
