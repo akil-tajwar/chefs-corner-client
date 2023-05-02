@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className='mx-auto w-fit border-slate-200 border p-8 mt-52'>
+        <div className='mx-auto w-fit border-slate-200 border p-8 mt-52 mb-20'>
             <h2 className='text-4xl text-center font-semibold mb-3'>Login</h2>
             <form>
                 <div className='pb-2'>
