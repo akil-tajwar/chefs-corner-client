@@ -3,7 +3,23 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
-    
+    const {signIn} = useContext(AuthContext);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            form.reset();
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
     return (
         <div className='mx-auto w-fit border-slate-200 border p-8 mt-52 mb-20'>
