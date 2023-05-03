@@ -25,6 +25,16 @@ const Login = () => {
     }
 
     const githubProvider = new GithubAuthProvider();
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -74,7 +84,7 @@ const Login = () => {
                 <p className='text-center'>--------- or ---------</p>
                 <div className='flex gap-2 mb-3'>
                     <button onClick={handleGoogleLogin} className='w-full bg-[#fc834b] p-2 mt-3'>Google</button>
-                    <button className='w-full bg-[#fc834b] p-2 mt-3'>Github</button>
+                    <button onClick={handleGithubLogin} className='w-full bg-[#fc834b] p-2 mt-3'>Github</button>
                 </div>
                 <div className='text-center'>
                     <small>New to Chef&apos;s Corner? <Link to='/signup' className='text-[#306d0a] font-semibold'>Create new account</Link></small>
