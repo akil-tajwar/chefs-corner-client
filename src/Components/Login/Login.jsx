@@ -1,10 +1,30 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import app from '../../firebase/firebase.config';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const [user, setUser] = useState({});
+    const auth = getAuth(app);
+
+    const googleProvider = new GoogleAuthProvider;
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, googleProvider)
+        .then(result => {
+            const user = result.user;
+            setUser(user);
+            console.log(user);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
+
+    const githubProvider = new GithubAuthProvider();
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -27,11 +47,11 @@ const Login = () => {
             setError('Your email address wrong');
             return;
         }
-        else if(error.includes('auth/wrong-password')){
+        else if (error.includes('auth/wrong-password')) {
             setError('Your password is wrong');
             return;
         }
-        else if(password.length === 0 || email.length === 0){
+        else if (password.length === 0 || email.length === 0) {
             setError('You can not submit an empty email or password field');
             return;
         }
@@ -53,11 +73,11 @@ const Login = () => {
                 </form>
                 <p className='text-center'>--------- or ---------</p>
                 <div className='flex gap-2 mb-3'>
-                    <button className='w-full bg-[#fc834b] p-2 mt-3'>Google</button>
+                    <button onClick={handleGoogleLogin} className='w-full bg-[#fc834b] p-2 mt-3'>Google</button>
                     <button className='w-full bg-[#fc834b] p-2 mt-3'>Github</button>
                 </div>
                 <div className='text-center'>
-                    <small>New to Chef's Corner? <Link to='/signup' className='text-[#306d0a] font-semibold'>Create new account</Link></small>
+                    <small>New to Chef&apos;s Corner? <Link to='/signup' className='text-[#306d0a] font-semibold'>Create new account</Link></small>
                 </div>
             </div>
             <p className='text-red-800 text-center font-semibold mb-20'>{error}</p>
