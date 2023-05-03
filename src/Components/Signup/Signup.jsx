@@ -9,17 +9,19 @@ const Signup = () => {
     const handelSignup = (e) => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
 
         setError('');
-        if (password.length < 6) {
+        if (password.length < 6 && password.length > 0) {
             setError('Password must have at least 6 characters');
             return;
         }
-        else if(password.length === 0 || email.length === 0){
+        else if(password.length === 0){
             setError('You can not submit an empty email or password field');
+            return;
         }
         createUser(email, password)
         .then(result => {

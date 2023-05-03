@@ -4,6 +4,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext);
+    console.log(user);
     const handleLogout = () => {
         logout()
         .then(() => {})
@@ -23,7 +24,7 @@ const Navbar = () => {
                         user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer' onClick={handleLogout}>Logout</span> : <Link className='hover:text-[#78bf4d] font-semibold' to='/signup'>Signup</Link>
                     }
                     {
-                        user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer'>{user.email}</span> : <Link className='hover:text-[#78bf4d] font-semibold' to='/login'>Login</Link>  
+                        user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer'>{user.displayName}</span> : <Link className='hover:text-[#78bf4d] font-semibold' to='/login'>Login</Link>  
                     }                 
                 </div>
             </div>
