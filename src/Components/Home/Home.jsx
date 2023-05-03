@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Chef from '../Chef/Chef';
+import { BsFillTrophyFill } from 'react-icons/bs';
+import { IoIosPeople } from 'react-icons/io';
+import { GiSandsOfTime } from 'react-icons/gi';
 
 const Home = () => {
     const [chefs, setChefs] = useState([]);
@@ -17,11 +20,27 @@ const Home = () => {
                 <button className='text-2xl rounded-3xl bg-[#78bf4d] text-[#20252b] font-semibold py-3 px-7'>View more</button>
             </div>
             <div>
-                <h1 className='text-center font-semibold text-4xl text-[#78bf4d] mt-20 mb-8'>Chef Menu</h1>
+                <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Chef Menu</h1>
                 <div className='grid grid-cols-3 w-fit mx-auto gap-10 mb-20'>
                     {
                         chefs.map(chef => <Chef key={chef.id} chef={chef}></Chef>)
                     }
+                </div>
+                <div>
+                    <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Why Chef's Corner?</h1>
+                    <div className='h-screen bg-[url(/src/assets/background-form.jpg)] bg-no-repeat'>
+                        <div className='flex gap-x-32 w-fit mx-auto pt-72'>
+                            <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                                <BsFillTrophyFill className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We are the winners of 50 <br /> competetions</h3>
+                            </div>
+                            <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                                <IoIosPeople className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>Our chefs are professional <br /> and skillful</h3>
+                            </div>
+                            <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                                <GiSandsOfTime className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We always give fastest and best services</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
