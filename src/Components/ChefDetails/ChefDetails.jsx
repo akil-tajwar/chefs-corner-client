@@ -8,7 +8,7 @@ const ChefDetails = () => {
     const [chefData, setChefData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/chefs')
+        fetch('https://chefs-corner-server-akil-tajwar.vercel.app/chefs')
             .then(res => res.json())
             .then(data => {
                 const chefData = data.find(chef => chef.id === chefDetails.id);
