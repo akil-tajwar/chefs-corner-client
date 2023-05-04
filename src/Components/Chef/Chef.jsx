@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
     const { id, name, photo, likes, recepies_count, description, experience } = chef;
@@ -13,7 +14,7 @@ const Chef = ({ chef }) => {
                 <p>Recepies : {recepies_count}</p>
                 <p>Likes : {likes}</p>
             </div>
-            <button className='w-full mt-2 bg-[#78bf4d] p-3 text-white text-xl font-semibold'>View Recipes</button>
+            <Link to={`/${id}`}><button className='w-full mt-2 bg-[#78bf4d] p-3 text-white text-xl font-semibold'>View Recipes</button></Link>
         </div>
     );
 };

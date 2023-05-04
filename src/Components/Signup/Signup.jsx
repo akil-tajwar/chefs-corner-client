@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Signup = () => {
     const [error, setError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const {user, createUser} = useContext(AuthContext);
 
     const handelSignup = (e) => {
         e.preventDefault();
@@ -13,6 +14,7 @@ const Signup = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
+        console.log(name, email, password, photo);
 
         setError('');
         if (password.length < 6 && password.length > 0) {

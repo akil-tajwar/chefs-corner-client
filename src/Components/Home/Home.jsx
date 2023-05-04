@@ -22,7 +22,7 @@ const Home = () => {
             </div>
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Chef Menu</h1>
-                <div className='grid grid-cols-3 w-fit mx-auto gap-10 mb-20'>
+                <div className='grid lg:grid-cols-3 grid-cols-1 w-fit mx-auto gap-10 mb-20'>
                     {
                         chefs.map(chef => <Chef key={chef.id} chef={chef}></Chef>)
                     }
@@ -99,15 +99,15 @@ const Home = () => {
             </div>
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Why Chef&apos;s Corner?</h1>
-                <div className='h-screen bg-[url(/src/assets/background-form.jpg)] bg-no-repeat'>
-                    <div className='flex gap-x-32 w-fit mx-auto pt-72'>
-                        <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                <div className='h-fit bg-[url(/src/assets/background-form.jpg)] bg-no-repeat'>
+                    <div className='flex gap-x-32 w-fit mx-auto py-64'>
+                        <div className='text-center text-2xl font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 mx-auto p-3'>
                             <BsFillTrophyFill className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We are the winners of 50 <br /> competetions</h3>
                         </div>
-                        <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                        <div className='text-center text-2xl font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 mx-auto p-3'>
                             <IoIosPeople className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>Our chefs are professional <br /> and skillful</h3>
                         </div>
-                        <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
+                        <div className='text-center text-2xl font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 mx-auto p-3'>
                             <GiSandsOfTime className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We always give fastest and best services</h3>
                         </div>
                     </div>

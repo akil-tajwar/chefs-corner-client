@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import app from '../../firebase/firebase.config';
@@ -35,6 +35,12 @@ const Login = () => {
             console.log(error.message);
         })
     }
+    // if(user){
+    //     return <Navigate to='/'></Navigate>
+    // }
+    // else{
+    //     <Navigate to='/login'></Navigate>
+    // }
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
