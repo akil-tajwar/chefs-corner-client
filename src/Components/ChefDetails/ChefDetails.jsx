@@ -21,7 +21,7 @@ const ChefDetails = () => {
 
     return (
         <div className='mt-52 grid grid-cols-1 gap-5 justify-between w-3/4 mx-auto'>
-            <div className='border-2 border-slate-200 w-fit mb-20 grid grid-cols-3'>
+            <div className='border-2 border-slate-200 mb-20 grid grid-cols-1 w-fit lg:w-3/5 mx-auto'>
                 <img className='w-full col-span-2' src={chefData.photo} alt="" />
                 <div>
                     <div className='p-3'>
@@ -31,17 +31,17 @@ const ChefDetails = () => {
                         </div>
                     </div>
                     <div>
-                        <div className='flex justify-between mt-4 border-t-2 p-3 border-slate-200'>
-                            <p><span className='text-[#fc834b] font-semibold'>Likes : </span>{chefData.likes}</p>
-                            <p><span className='text-[#fc834b] font-semibold'>Experience : </span>{chefData.experience} Years</p>
-                            <p><span className='text-[#fc834b] font-semibold'>Recepies : </span>{chefData.recepies_count} Items</p>
+                        <div className='grid grid-cols-2 lg:grid-cols-3 mt-4 border-t-2 p-3 border-slate-200'>
+                            <div className='lg:text-left'><p><span className='text-[#fc834b] font-semibold'>Likes : </span>{chefData.likes}</p></div>
+                            <div className='lg:text-center text-right'><p><span className='text-[#fc834b] font-semibold'>Experience : </span>{chefData.experience} Years</p></div>
+                            <div className='lg:text-right text-left'><p><span className='text-[#fc834b] font-semibold'>Recepies : </span>{chefData.recepies_count} Items</p></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
                 <h3 className='font-bold text-3xl mb-4 text-[#78bf4d] text-center'>Recipes</h3>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
                     {
                         chefData.recipe_details.map(recipe => <Recipe recipe={recipe} key={recipe.id}></Recipe>)
                     }

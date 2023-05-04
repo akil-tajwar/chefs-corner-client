@@ -16,9 +16,9 @@ const Home = () => {
     })
     return (
         <div>
-            <div className='h-screen bg-[url(/src/assets/slide_03.jpg)] bg-no-repeat text-center'>
-                <h1 className='text-white text-5xl pt-96 mt-10 mb-8 font-bold'>Our chefs are very much experienced <br /> and skillfull. We can prepare any dish, that <br /> your heart truly desires.</h1>
-                <button className='text-2xl rounded-3xl bg-[#78bf4d] text-[#20252b] font-semibold py-3 px-7'>View more</button>
+            <div className='h-fit bg-[url(/src/assets/slide_03.jpg)] bg-no-repeat text-center'>
+                <h1 className='text-white text-5xl pt-72 mt-10 mb-8 font-bold'>Our chefs are very much experienced <br /> and skillfull. We can prepare any dish, that <br /> your heart truly desires.</h1>
+                <button className='text-2xl mb-72 rounded-3xl bg-[#78bf4d] text-[#20252b] font-semibold py-3 px-7'>View more</button>
             </div>
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Chef Menu</h1>
@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mb-8'>FAQ Section</h1>
-                <div className='w-1/2 mx-auto flex flex-col gap-5'>
+                <div className='lg:w-1/2 w-11/12 mx-auto flex flex-col gap-5'>
                     <div className='w-full mx-auto border-2 border-slate-200'>
                         <div className="collapse">
                             <input type="checkbox" />
@@ -100,7 +100,7 @@ const Home = () => {
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Why Chef&apos;s Corner?</h1>
                 <div className='h-fit bg-[url(/src/assets/background-form.jpg)] bg-no-repeat'>
-                    <div className='flex gap-x-32 w-fit mx-auto py-64'>
+                    <div className='flex lg:gap-x-32 gap-5 flex-col lg:flex-row w-fit mx-auto lg:py-64 py-5'>
                         <div className='text-center text-2xl font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 mx-auto p-3'>
                             <BsFillTrophyFill className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We are the winners of 50 <br /> competetions</h3>
                         </div>

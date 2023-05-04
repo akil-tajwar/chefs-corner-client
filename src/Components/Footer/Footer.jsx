@@ -8,17 +8,8 @@ import { RiInstagramFill } from 'react-icons/ri';
 const Footer = () => {
     return (
         <div>
-            <div className='bg-[#78bf4d] text-white text-4xl'>
-                <div className='w-4/6 mx-auto font-semibold p-5 flex justify-between'>
-                    <h1>For 10% off use a promo code</h1>
-                    <div className='flex gap-2 right-0'>
-                        <input className='text-black' type="text" />
-                        <button className='bg-[#fc834b] p-2 text-xl'>Use Promo</button>
-                    </div>
-                </div>
-            </div>
             <div className='bg-[#20252b] text-white p-8'>
-                <div className='flex justify-between w-3/4 mx-auto'>
+                <div className='flex justify-between flex-col gap-20 lg:flex-row w-3/4 mx-auto'>
                     <div>
                         <div className='flex items-center mb-14'>
                             <img className='w-24' src="/src/assets/logo.png" alt="" />
@@ -33,7 +24,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <h2 className='font-semibold text-4xl mb-3'>Social Links</h2>
+                        <h2 className='font-semibold text-4xl mb-3 text-[#fc834b]'>Social Links</h2>
                         <p>You can find us from social links given below</p>
                         <div className='flex gap-3 mt-8'>
                             <FaFacebookSquare className='text-[#78bf4d] text-4xl' />
@@ -42,7 +33,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-4xl mb-8'>Subscibe</h2>
+                        <h2 className='text-4xl mb-8 font-semibold text-[#fc834b]'>Subscibe</h2>
                         <input className='p-1 mb-3 text-black pl-2' type="text" /><br />
                         <button className='bg-[#78bf4d] text-[#20252b] font-semibold py-1 px-3'>Subscribe</button>
                     </div>
