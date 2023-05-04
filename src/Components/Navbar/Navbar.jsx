@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext);
@@ -19,13 +19,13 @@ const Navbar = () => {
                     <h2 className='font-semibold text-4xl'>Chef&apos;s Corner <span className='text-[#78bf4d]'>.</span></h2>
                 </div>
                 <div className='flex gap-8 items-center justify-center'>
-                    <Link className='hover:text-[#78bf4d] font-semibold' to='/'>Home</Link>
-                    <Link className='hover:text-[#78bf4d] font-semibold' to='/blog'>Blog</Link>
+                    <ActiveLink className='font-semibold' to='/'>Home</ActiveLink>
+                    <ActiveLink className='font-semibold' to='/blog'>Blog</ActiveLink>
                     {
-                        user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer' onClick={handleLogout}>Logout</span> : <Link className='hover:text-[#78bf4d] font-semibold' to='/signup'>Signup</Link>
+                        user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer' onClick={handleLogout}>Logout</span> : <ActiveLink className='font-semibold' to='/signup'>Signup</ActiveLink>
                     }
                     {
-                        user ? <img className='rounded-full w-10 border-2 border-[#78bf4d]' src={user.photoURL} title={user.displayName} alt="user photo" /> : <Link className='hover:text-[#78bf4d] font-semibold' to='/login'>Login</Link>  
+                        user ? <img className='rounded-full w-10 border-2 border-[#78bf4d]' src={user.photoURL} title={user.displayName} alt="user photo" /> : <ActiveLink className='font-semibold' to='/login'>Login</ActiveLink>  
                     }                 
                 </div>
             </div>

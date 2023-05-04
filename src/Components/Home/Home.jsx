@@ -14,6 +14,9 @@ const Home = () => {
             .then(data => setChefs(data))
             .catch(error => console.log(error))
     })
+    if (!chefs) {
+        return <div>Loading...</div>
+    }
     return (
         <div>
             <div className='h-fit bg-[url(/src/assets/slide_03.jpg)] bg-no-repeat text-center'>

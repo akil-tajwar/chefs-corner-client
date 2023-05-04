@@ -13,6 +13,7 @@ import Blog from './Components/Blog/Blog';
 import Error from './Components/Error/Error';
 import AuthProvider from './Components/Providers/AuthProvider';
 import ChefDetails from './Components/ChefDetails/ChefDetails';
+import PrivateRoutes from './Components/Routes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/:id',
-        element: <ChefDetails></ChefDetails>,
+        element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
       },
       {
         path: 'login',
