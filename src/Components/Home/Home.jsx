@@ -29,6 +29,75 @@ const Home = () => {
                 </div>
             </div>
             <div>
+                <h1 className='text-center font-semibold text-4xl text-[#fc834b] mb-8'>FAQ Section</h1>
+                <div className='w-1/2 mx-auto flex flex-col gap-5'>
+                    <div className='w-full mx-auto border-2 border-slate-200'>
+                        <div className="collapse">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-xl font-medium flex justify-between">
+                                <div>
+                                    What types of chefs do you offer?
+                                </div>
+                                <div>
+                                    +
+                                </div>
+                            </div>
+                            <div className="collapse-content">
+                                <p>We offer a wide variety of chefs, including executive chefs, sous chefs, pastry chefs, private chefs, and more. Our chefs have experience in a range of cuisines, from traditional to fusion to modern, and we work with each client to find the best match for their needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='w-full mx-auto border-2 border-slate-200'>
+                        <div className="collapse">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-xl font-medium flex justify-between">
+                                <div>
+                                    How do you vet your chefs?
+                                </div>
+                                <div>
+                                    +
+                                </div>
+                            </div>
+                            <div className="collapse-content">
+                                <p>We have a rigorous vetting process for our chefs to ensure that they meet our high standards for quality and professionalism. This includes checking references, verifying education and experience, and conducting background checks. We only work with chefs who have a proven track record of success in the industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='w-full mx-auto border-2 border-slate-200'>
+                        <div className="collapse">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-xl font-medium flex justify-between">
+                                <div>
+                                    Can you accommodate special dietary needs?
+                                </div>
+                                <div>
+                                    +
+                                </div>
+                            </div>
+                            <div className="collapse-content">
+                                <p>Absolutely. Our chefs are trained to work with a range of dietary restrictions and preferences, including vegetarian, vegan, gluten-free, and more. We work closely with clients to understand their specific needs and create customized menus that meet their requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='w-full mx-auto border-2 border-slate-200'>
+                        <div className="collapse">
+                            <input type="checkbox" />
+                            <div className="collapse-title text-xl font-medium flex justify-between">
+                                <div>
+                                    What is the process for hiring a chef?
+                                </div>
+                                <div>
+                                    +
+                                </div>
+                            </div>
+                            <div className="collapse-content">
+                                The process for hiring a chef begins with a consultation with one of our team members. During this consultation, we&apos;ll discuss your needs and preferences, including the type of cuisine you&apos;re interested in, the size of your party, and any dietary restrictions or preferences. From there, we&apos;ll match you with a chef who meets your criteria and work with you to finalize the details of your event. Our goal is to make the process as seamless and stress-free as possible for our clients.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Why Chef&apos;s Corner?</h1>
                 <div className='h-screen bg-[url(/src/assets/background-form.jpg)] bg-no-repeat'>
                     <div className='flex gap-x-32 w-fit mx-auto pt-72'>
@@ -41,36 +110,6 @@ const Home = () => {
                         <div className='text-center text-2xl pt-8 font-semibold border-2 bg-white border-[#fc834b] w-60 h-60 m-auto p-3'>
                             <GiSandsOfTime className='mx-auto text-7xl text-[#78bf4d] mb-2 pt-4' /><h3 className='font-bold'>We always give fastest and best services</h3>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <h3 className='text-2xl text-center'>Hello</h3>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <h3 className='text-2xl text-center'>Hello</h3>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <h3 className='text-2xl text-center'>Hello</h3>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <h3 className='text-2xl text-center'>Hello</h3>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
@@ -24,7 +25,6 @@ const Footer = () => {
                             <h2 className='font-semibold text-4xl'>Chef&apos;s Corner <span className='text-[#78bf4d]'>.</span></h2>
                         </div>
                         <div>
-                            {/* <p>Our chefs are very experienced and skillful. <br /> They can prepare any dish, that your heart <br /> truly desires.</p> */}
                             <ul className='mt-6 flex flex-col gap-2'>
                                 <li className='flex gap-2 items-center'><MdLocationOn className='text-[#78bf4d] text-2xl' /><p>828 Curtis Ferry, New York, USA</p></li>
                                 <li className='flex gap-2 items-center'><BsTelephoneFill className='text-[#78bf4d] text-xl' /><p>+8 (800) 238 3597 (admin)</p></li>
@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='bg-[#15171c] text-[#fc834b] p-3 text-center'>
-                <p>© Chef's Corner 2023 | Created by <span>Akil Tajwar</span></p>
+                <p>© Chef&apos;s Corner 2023 | Created by <span>Akil Tajwar</span></p>
             </div>
         </div>
     );

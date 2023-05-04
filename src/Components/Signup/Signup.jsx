@@ -56,11 +56,6 @@ const Signup = () => {
                     </div>
                     <button className='w-full bg-[#fc834b] p-2 mt-4 mb-3'>Signup</button><br />
                 </form>
-                <p className='text-center'>--------- or ---------</p>
-                <div className='flex gap-2 mb-3'>
-                    <button className='w-full bg-[#fc834b] p-2 mt-3'>Google</button>
-                    <button className='w-full bg-[#fc834b] p-2 mt-3'>Github</button>
-                </div>
                 <div className='text-center'>
                     <small>Already have an account? <Link to='/login' className='text-[#306d0a] font-semibold'>Login</Link></small>
                 </div>
