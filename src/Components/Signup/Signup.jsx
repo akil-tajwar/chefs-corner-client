@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import Navbar from '../Navbar/Navbar';
 
 const Signup = () => {
     const [error, setError] = useState('');
-    const {user, createUser} = useContext(AuthContext);
-    const [userDetails, setUserDetails] = useState('');
+    const { user, createUser } = useContext(AuthContext);
+    const { logout, setLogout } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/login";
 
     const handelSignup = (e) => {
         e.preventDefault();
@@ -24,32 +27,34 @@ const Signup = () => {
             setError('Password must have at least 6 characters');
             return;
         }
-        else if(password.length === 0){
+        else if (password.length === 0) {
             setError('You can not submit an empty email or password field');
             return;
         }
         createUser(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            updateUserData(result.user, name, photo);
-        })
-        .catch(error => {
-            console.log(error);
-            setError(error.message);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserData(result.user, name, photo);
+                navigate(from, { replace: true });
+                logout();
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            })
 
         const updateUserData = (user, name, photo) => {
             updateProfile(user, {
                 displayName: name,
                 photoURL: photo
             })
-            .then(() => {
-                console.log('name updated');
-            })
-            .catch(error => {
-                console.log(error);
-            })
+                .then(() => {
+                    console.log('name updated');
+                })
+                .catch(error => {
+                    console.log(error);
+                })
             return <Navbar user={user}></Navbar>
         }
     }
