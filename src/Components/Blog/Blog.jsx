@@ -1,12 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blog = () => {
     return (
-        <div className='mt-52 mb-20 w-3/4 mx-auto'>
+        <div className='mt-52 mb-20 w-11/12 lg:w-3/4 mx-auto'>
             <div className='text-center'>
                 <h1 className='font-semibold text-4xl text-[#78bf4d]'>Question/Answer</h1>
-                <button className='bg-[#fc834b] px-3 py-1 text-white font-semibold mt-3'>Download</button>
+                <div>
+                    <Pdf targetRef={ref} filename="My Blog.pdf">
+                        {({ toPdf }) => <button className='bg-[#fc834b] px-3 py-1 text-white font-semibold mt-3' onClick={toPdf}>Download Pdf</button>}
+                    </Pdf>
+                    <div style={{width: 800, height: 500, position: "absolute", left: "-9999px", top: "-9999px"}} className='text-center pt-5' ref={ref}>
+                        <h1 className='text-center text-3xl font-semibold text-[#fc834b] mb-2'>Blog Details</h1>
+                        <p className='text-justify w-11/12 mx-auto'>the blog section includes four questions related to React, Node.js, and web development. The first two questions discuss the differences between uncontrolled and controlled components in React, and how to validate props using PropTypes. The third question focuses on the difference between Node.js and Express.js, which are both important tools for building web applications. Finally, the fourth question covers the concept of custom hooks in React, which are reusable functions that can be used to extract and reuse stateful logic in multiple components. By providing clear and informative answers to these questions, the blog section can help readers better understand the services and technologies offered by the chef hiring company.</p>
+                    </div>
+                </div>
             </div>
             <div className='p-6'>
                 <div className='pt-8'>

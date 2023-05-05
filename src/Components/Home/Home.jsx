@@ -19,9 +19,9 @@ const Home = () => {
     }
     return (
         <div>
-            <div className='h-fit bg-[url(/src/assets/slide_03.jpg)] bg-no-repeat text-center'>
-                <h1 className='text-white text-5xl pt-72 mt-10 mb-8 font-bold'>Our chefs are very much experienced <br /> and skillfull. We can prepare any dish, that <br /> your heart truly desires.</h1>
-                <button className='text-2xl mb-72 rounded-3xl bg-[#78bf4d] text-[#20252b] font-semibold py-3 px-7'>View more</button>
+            <div className='h-fit bg-[url(/src/assets/slide_03.jpg)] bg-no-repeat bg-center text-center'>
+                <h1 className='text-white w-11/12 lg:w-full mx-auto text-3xl lg:text-5xl pt-96 mt-12 mb-8 font-bold'>Our chefs are very much experienced <br /> and skillfull. We can prepare any dish, that <br /> your heart truly desires.</h1>
+                <button className='text-2xl lg:mb-96 mb-72 rounded-3xl bg-[#78bf4d] text-[#20252b] font-semibold py-3 px-7'>View more</button>
             </div>
             <div>
                 <h1 className='text-center font-semibold text-4xl text-[#fc834b] mt-20 mb-8'>Chef Menu</h1>

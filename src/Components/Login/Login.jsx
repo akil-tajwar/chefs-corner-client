@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import app from '../../firebase/firebase.config';
@@ -10,37 +10,37 @@ const Login = () => {
     const [error, setError] = useState('');
     const [user, setUser] = useState({});
     const auth = getAuth(app);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
 
     const googleProvider = new GoogleAuthProvider;
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const user = result.user;
-            setUser(user);
-            console.log(user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                navigate(from, { replace: true });
+                setUser(user);
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
 
     const githubProvider = new GithubAuthProvider();
     const handleGithubLogin = () => {
         signInWithPopup(auth, githubProvider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                navigate(from, { replace: true });
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
-    // if(user){
-    //     return <Navigate to='/'></Navigate>
-    // }
-    // else{
-    //     <Navigate to='/login'></Navigate>
-    // }
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -50,6 +50,7 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
+                navigate(from, { replace: true });
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset();
@@ -72,6 +73,7 @@ const Login = () => {
             return;
         }
     }
+
     return (
         <div>
             <div className='mx-auto w-fit border-slate-200 border p-8 mt-52 mb-4'>

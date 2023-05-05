@@ -4,9 +4,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
-    const { id, name, photo, likes, recepies_count, description, experience } = chef;
+    const { id, name, photo, likes, recepies_count, experience } = chef;
     return (
-        <div className='border border-slate-300 w-fit'>
+        <div className='border border-slate-300 lg:w-fit w-11/12 mx-auto'>
             <img className='w-96' src={photo} alt="" />
             <div className='p-3'>
                 <h3 className='font-semibold text-3xl mb-3 text-[#fc834b]'>{name}</h3>
