@@ -2,10 +2,13 @@
 import React, { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import Navbar from '../Navbar/Navbar';
 
 const Signup = () => {
     const [error, setError] = useState('');
     const {user, createUser} = useContext(AuthContext);
+    const [userDetails, setUserDetails] = useState('');
 
     const handelSignup = (e) => {
         e.preventDefault();
@@ -29,11 +32,26 @@ const Signup = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            updateUserData(result.user, name, photo);
         })
         .catch(error => {
             console.log(error);
             setError(error.message);
         })
+
+        const updateUserData = (user, name, photo) => {
+            updateProfile(user, {
+                displayName: name,
+                photoURL: photo
+            })
+            .then(() => {
+                console.log('name updated');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            return <Navbar user={user}></Navbar>
+        }
     }
     return (
         <div>

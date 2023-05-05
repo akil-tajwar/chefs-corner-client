@@ -40,7 +40,7 @@ const ChefDetails = () => {
                 </div>
             </div>
             <div>
-                <h3 className='font-bold text-3xl mb-4 text-[#78bf4d] text-center'>Recipes</h3>
+                <h3 className='font-bold text-3xl mb-4 text-[#fc834b] text-center'>Recipes</h3>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
                     {
                         chefData.recipe_details.map(recipe => <Recipe recipe={recipe} key={recipe.id}></Recipe>)

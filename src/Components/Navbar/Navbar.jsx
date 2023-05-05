@@ -25,7 +25,7 @@ const Navbar = () => {
                         user ? <span className='hover:text-[#78bf4d] font-semibold cursor-pointer' onClick={handleLogout}>Logout</span> : <ActiveLink className='font-semibold' to='/signup'>Signup</ActiveLink>
                     }
                     {
-                        user ? <img className='rounded-full w-10 border-2 border-[#78bf4d]' src={user.photoURL} title={user.displayName} alt="user photo" /> : <ActiveLink className='font-semibold' to='/login'>Login</ActiveLink>  
+                        user ? <div className='w-10 h-10 relative'><img className='rounded-full w-full h-full object-cover border-2 border-[#78bf4d]' src={user.photoURL} title={user.displayName} alt="user photo" /></div> : <ActiveLink className='font-semibold' to='/login'>Login</ActiveLink>  
                     }                 
                 </div>
             </div>
