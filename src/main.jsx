@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -12,8 +13,9 @@ import Signup from './Components/Signup/Signup';
 import Blog from './Components/Blog/Blog';
 import Error from './Components/Error/Error';
 import AuthProvider from './Components/Providers/AuthProvider';
-import ChefDetails from './Components/ChefDetails/ChefDetails';
+// import ChefDetails from './Components/ChefDetails/ChefDetails';
 import PrivateRoutes from './Components/Routes/PrivateRoutes';
+const LazyChefDetails = React.lazy(() => import('./Components/ChefDetails/ChefDetails'));
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/:id',
-        element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
+        element: <PrivateRoutes>
+          <React.Suspense fallback='Loading...'>
+            <LazyChefDetails></LazyChefDetails>
+          </React.Suspense>
+        </PrivateRoutes>,
       },
       {
         path: 'login',
