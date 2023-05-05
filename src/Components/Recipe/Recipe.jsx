@@ -20,18 +20,16 @@ const Recipe = ({ recipe }) => {
     }
     const { r_name, ingredients, cooking_method, rating } = recipe
     return (
-        <div>
-            <div className='border-2 border-slate-200 text-justify equal-size mb-20'>
+        <div className='mb-20'>
+            <div className='border-2 relative h-full border-slate-200 text-justify equal-size mb-10'>
                 <div className='p-3'>
                     <h2 className='text-2xl font-semibold text-[#78bf4d] mb-4'>{r_name}</h2>
                     <p className='mb-2'><span className='font-semibold text-[#fc834b]'>Recipe Ingredients : </span>{ingredients}</p>
                     <p className='mb-2'><span className='font-semibold text-[#fc834b]'>Cooking Method : </span>{cooking_method}</p>
                     <p className='mb-2'><span className='text-[#fc834b] font-semibold'>Rating : </span>{rating}</p>
                 </div>
-                <div className='flex items-end'>
-                    <button disabled={disabled} onClick={favorite} className='text-white bg-[#fc834b] border-t-2 border-slate-200 text-xl w-full p-3 text-center font-semibold'>Favorite Recipe</button>
-                    <ToastContainer></ToastContainer>
-                </div>
+                <button disabled={disabled} onClick={favorite} className='text-white absolute bottom-0 bg-[#fc834b] border-t-2 border-slate-200 text-xl w-full p-3 text-center font-semibold'>Favorite Recipe</button>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

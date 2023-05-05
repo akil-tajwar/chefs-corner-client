@@ -12,7 +12,7 @@ const Navbar = () => {
         .catch(error => console.log(error))
     }
     return (
-        <div className='bg-[#20252b] text-white p-5 fixed w-full top-0'>
+        <div className='bg-[#20252b] text-white p-5 fixed w-full top-0 z-10'>
             <div className='flex flex-col lg:flex-row justify-between w-11/12 mx-auto'>
                 <div className='flex gap-4 items-center justify-center'>
                     <img className='w-24' src="/logo.png" alt="Company Logo" />
